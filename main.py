@@ -1,5 +1,5 @@
 from classes import Api, Meraki
-import json, time, argparse
+import json, time, argparse, pprint
 
 
 def main():
@@ -49,7 +49,7 @@ def main():
                                 for client in clients["data"]:
                                     if client["switchport"]:
                                          resultDevices[device["mac"]]["ports"]["num" + client["switchport"]]["inUse"] = True
-    print(resultDevices)
+    pprint.pprint(resultDevices)
 
 if __name__ == '__main__':
     main()
